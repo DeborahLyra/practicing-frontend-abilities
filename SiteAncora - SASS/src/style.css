@@ -83,6 +83,7 @@ footer {
 @media (max-width: 900px) {
   .title-icons {
     display: none;
+    opacity: 0;
   }
   .about-info {
     display: flex;
@@ -95,10 +96,10 @@ footer {
   }
   .project-item img {
     width: 300px;
-    margin: 10px 20px;
+    margin: 0.6rem 1.2rem;
   }
   .project-text {
-    padding: 40px;
+    padding: 2.5rem;
   }
 }
 @media (max-width: 635px) {
@@ -106,7 +107,7 @@ footer {
     display: none;
   }
   .title {
-    font-size: 12px;
+    font-size: 0.8rem;
     text-align: center;
   }
   .title-h1 {
@@ -114,7 +115,7 @@ footer {
   }
   .about-info-skills {
     margin: 0 auto;
-    padding-left: 50px;
+    padding-left: 4.5rem;
     width: 100%;
   }
   footer {
