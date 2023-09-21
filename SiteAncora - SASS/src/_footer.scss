@@ -1,0 +1,38 @@
+
+$font-stack: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$primary-color: rgb(58, 112, 94);
+$background-color: rgb(216, 238, 238);
+$secondary-color: #fff;
+$more-space: 2.5rem;
+$less-space: 1.5rem;
+$border-radius: 10px;
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: $less-space;
+    background-color: $primary-color;
+    margin-top: $more-space;
+    color: $secondary-color;
+  }
+  
+  .footer-text {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+  
+  .footer-text h3,
+  .footer-social h3 {
+    margin-bottom: $less-space;
+  }
+  
+  .footer-social {
+    padding: $less-space;
+  }
+  
+  .footer-social i {
+    margin: 0 10px 0 0;
+    font-size: 2rem;
+    text-align: center;
+  }

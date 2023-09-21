@@ -1,20 +1,224 @@
-@use 'base';
-@use 'menu';
+@use "base";
+@use "menu";
+@use "footer";
+@use "responsive";
 
-  header {
-    position: fixed;
-    background-color: $secondary-color;
+
+$font-stack: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$primary-color: rgb(58, 112, 94);
+$background-color: rgb(216, 238, 238);
+$secondary-color: #fff;
+$more-space: 2.5rem;
+$less-space: 1.5rem;
+$border-radius: 10px;
+
+
+// Section 1
+
+.title {
+    font-size: 1.2rem;
+    background-color: $primary-color;
+    height: 500px;
+    color: $secondary-color;
+  }
+  
+  .title-h1 {
+    padding-top: 100px;
+    margin-bottom: $less-space;
+    font-size: $more-space;
+  }
+  
+  .title-content {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn {
+    margin-top: 50px;
+    border-radius: $border-radius;
     color: $primary-color;
-    font-weight: bolder;
-    width: 100%;
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .title-icons {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: $less-space;
+    margin-top: -200px;
+  }
+  
+  .title-icons i {
+    border: 1px solid $secondary-color;
+    width: $more-space;
+    text-align: center;
+    padding: 5px;
   }
 
-  header {
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
+//Section 2
 
+.about-container{
+    margin-bottom: $more-space;
+  }
+  
+  .about-text,
+  .about-projects,
+  .about-contact {
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 4rem;
+  }
+  
+  .about-text h3,
+  .about-projects h3,
+  .about-contact h3 {
+    margin-bottom: $less-space;
+    font-size: 2rem;
+  }
+  
+  .azul {
+    background-color: $primary-color;
+    width: 50px;
+    height: 10px;
+    border-radius: 50px;
+    margin: 0 auto;
+    margin-bottom: $less-space;
+  }
+  
+  .about-text p,
+  .about-projects p,
+  .about-contact p {
+    max-width: 700px;
+    margin: 0 auto;
+  }
 
+//Section 2 - part 2
+
+.about-info {
+    display: flex;
+  }
+  
+  .about-info-text {
+    width: 50%;
+    text-align: justify;
+    margin: $more-space;
+    line-height: 2rem;
+  }
+  
+  .about-button,
+  .btn-project {
+    margin-top: $less-space;
+    border-radius: $border-radius;
+    color: $secondary-color;
+    background-color: $primary-color;
+    border: 1px solid $secondary-color;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.4s ease-out;
+  }
+  
+  .about-button:hover,
+  .btn-project:hover {
+    transform: translateY(-5px);
+  }
+  
+  .about-info-skills {
+    padding:$less-space;
+    margin: $less-space;
+  }
+  
+  .about-info-list {
+    display: flex;
+    flex-wrap: wrap;
+   
+  }
+  
+  .about-info-list li {
+    margin: 1rem 1.5rem 0 0;
+    padding: 15px;
+    color: $secondary-color;
+    background-color:$primary-color;
+    border-radius: $border-radius;
+    font-size: 1.2rem;
+  }
+
+//Section 3 
+
+.projects-list {
+    margin: $more-space;
+  }
+  
+  .project-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .project-item img {
+    width: 500px;
+    margin: $less-space $more-space;
+  }
+  
+  .project-text {
+    text-align: justify;
+    padding: 4rem;
+  }
+  
+  .project-text h4 {
+    margin-bottom: $less-space;
+  }
+  
+  form {
+    background-color: $primary-color;
+    margin: $less-space auto;
+    padding: $less-space;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: $border-radius;
+    max-width: 900px;
+  }
+  
+  form input,
+  form textarea {
+    min-width: 80%;
+    padding: 0.8rem 1.5rem;
+    margin: $less-space;
+    font-size: 1rem;
+    border-radius: $border-radius;
+    border: none;
+    color: $primary-color;
+  }
+  
+  form input:focus,
+  form textarea {
+    outline: none;
+  }
+  
+  form input::placeholder,
+  form textarea::placeholder {
+    font-size: 1rem;
+  }
+  
+  form label {
+    font-size: 1.2rem;
+    color: $secondary-color;
+  }
+  
+  form textarea {
+    resize: none;
+  }
+  
+  .btn-form {
+    cursor: pointer;
+    font-weight: bolder;
+  }
