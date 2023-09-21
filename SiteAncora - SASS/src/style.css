@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  font: 100% Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: rgb(216, 238, 238);
+  height: 100vh;
+}
+
+header {
+  position: fixed;
+  background-color: #fff;
+  color: rgb(58, 112, 94);
+  font-weight: bolder;
+  width: 100%;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */

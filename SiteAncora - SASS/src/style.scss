@@ -1,0 +1,20 @@
+@use 'base';
+@use 'menu';
+
+  header {
+    position: fixed;
+    background-color: $secondary-color;
+    color: $primary-color;
+    font-weight: bolder;
+    width: 100%;
+  }
+
+  header {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+

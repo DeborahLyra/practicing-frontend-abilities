@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portifolio</title>
+
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-profile">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7dOUBi4WMRe4IWnph7iu6BDo3R0-t5AFa6SQQZTI&s"
+                    alt="profile" class="img-profile" />
+                <h2 class="nav-h2">John Doe</h2>
+            </div>
+            <ul class="list-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="title" id="home">
+            <div class="title-content">
+                <h1 class="title-h1">Hey, my name is John Doe</h1>
+                <p class="title-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+                    tempora explicabo quae quod deserunt eius sapiente solutions for
+                    complex problems.
+                </p>
+                <button class="btn">Projects</button>
+            </div>
+            <div class="title-icons">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </section>
+
+
+        <section class="about-container" id="about">
+            <div class="about-text">
+                <h3>ABOUT ME</h3>
+                <div class="azul"></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+                    tempora explicabo quae quod deserunt eius sapiente
+                </p>
+            </div>
+
+            <div class="about-info">
+                <div class="about-info-text">
+                    <h3>Get to know me!</h3>
+                    <p>
+                        Hey! It's John Doe and I'm a Frontend Web Developer located in Los
+                        Angeles. I've done remote projects for agencies, consulted for
+                        startups, and collaborated with talented people to create digital
+                        products for both business and consumer use.
+                        <br />
+                        I'm a bit of a digital product junky. Over the years, I've used
+                        hundreds of web and mobile apps in different industries and
+                        verticals. Feel free to contact me here.
+                    </p>
+
+                    <button class="about-button">Contact</button>
+                </div>
+                <div class="about-info-skills">
+                    <h3>My Skills</h3>
+                    <ul class="about-info-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Git</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-container" id="projects">
+            <div class="about-projects">
+                <h3>PROJECTS</h3>
+                <div class="azul"></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+                    tempora explicabo quae quod deserunt eius sapiente
+                </p>
+            </div>
+
+            <div class="projects-list">
+                <div class="project-item">
+                    <img src="https://dopefolio.netlify.app/assets/jpeg/project-mockup-example.jpeg" alt="computador" />
+
+                    <span class="project-text">
+                        <h4>Project 1</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                            facilis tempora, explicabo quae quod deserunt eius sapiente
+                            praesentium.
+                        </p>
+                        <button class="btn-project">Case Study</button>
+                    </span>
+                </div>
+
+                <div class="project-item">
+                    <img src="https://dopefolio.netlify.app/assets/jpeg/project-mockup-example.jpeg" alt="computador" />
+
+                    <span class="project-text">
+                        <h4>Project 2</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                            facilis tempora, explicabo quae quod deserunt eius sapiente
+                            praesentium.
+                        </p>
+                        <button class="btn-project">Case Study</button>
+                    </span>
+                </div>
+
+                <div class="project-item">
+                    <img src="https://dopefolio.netlify.app/assets/jpeg/project-mockup-example.jpeg" alt="computador" />
+
+                    <span class="project-text">
+                        <h4>Project 3</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                            facilis tempora, explicabo quae quod deserunt eius sapiente
+                            praesentium.
+                        </p>
+                        <button class="btn-project">Case Study</button>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="about-contact" id="contact">
+            <div class="about-contact">
+                <h3>CONTACT</h3>
+                <div class="azul"></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+                    tempora explicabo quae quod deserunt eius sapiente
+                </p>
+            </div>
+
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Enter your name" />
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" />
+                <label for="text-area">Message</label>
+                <textarea name="text-area" id="text-area" cols="30" rows="10"
+                    placeholder="Enter your message"></textarea>
+                <input type="submit" class="btn-form" />
+            </form>
+        </section>
+
+
+    </main>
+
+  
+    <footer>
+        <div class="footer-text">
+          <h3>JOHN DOE</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
+            tempora explicabo quae quod deserun
+          </p>
+        </div>
+  
+        <div class="footer-social">
+          <h3>SOCIAL</h3>
+          <div class="footer-icons">
+            <i class="fab fa-github"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-twitter"></i>
+          </div>
+        </div>
+      </footer>
+
+</body>
+
+</html>
