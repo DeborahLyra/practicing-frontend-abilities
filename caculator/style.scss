@@ -1,0 +1,47 @@
+$primary-color: rgb(244, 194, 238) ;
+$border-radius: 10px;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+
+body{
+    background-image: linear-gradient( to right, rgb(179, 115, 228),rgb(200, 129, 244), rgb(232, 131, 241) );
+    font-size: 2rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    background-color:$primary-color;
+    border-radius: $border-radius;
+    padding: 1rem;
+    width: 40%;
+  }
+
+  .btns{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5 1fr) ;
+    gap: 0.2rem;
+  }
+
+  .btn-ac,
+  .btn-delete {
+      grid-column: span 2;
+  }
+  
+.form-control{
+    margin-bottom: 0.5rem;
+}
+
+.form-control:focus{
+    outline: 0;
+}
+ 
