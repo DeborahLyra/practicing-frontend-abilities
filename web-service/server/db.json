@@ -1,6 +1,5 @@
 {
-   "livros": 
-   [
+  "livros": [
     {
       "id": 1,
       "titulo": "Orgulho e Preconceito"
@@ -20,8 +19,14 @@
     {
       "id": 5,
       "titulo": "Morro dos Ventos Uivantes"
+    },
+    {
+      "titulo": "Um Verão na Itália",
+      "id": 6
+    },
+    {
+      "titulo": "A culpa é das estrelas",
+      "id": 8
     }
   ]
-  
-   
-  }
+}
