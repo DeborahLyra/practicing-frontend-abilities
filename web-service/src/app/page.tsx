@@ -2,9 +2,11 @@
 import { useState, useEffect } from "react"
 import { api } from "../../services/api";
 
+
 interface Livros { //aqui cira uma interface que vai servir de base para armazenar a lista
   id: number,
   titulo: string
+  isEditing: boolean,
 }
 
 export default function Home() {
@@ -25,6 +27,10 @@ export default function Home() {
       console.log("erro")
     }
   }
+  
+  useEffect(() => {  //aqui usa o useEffect para a lista aparecer assim que carrega a página
+    loadLista()
+  }, [])
 
   async function loadLista() {  //essa função é a responsável por carregar a página, é ela que 
     //faz com que a medida que os itens forem adicionados, vão aparecer simultaneamente
@@ -32,7 +38,6 @@ export default function Home() {
     try {
       const response = await api.get("/livros")
       setItems(response.data)
-      console.log(items)
       console.log(response.data)
     } catch (error) {
       console.log("erro")
@@ -41,13 +46,28 @@ export default function Home() {
     }
   }
 
-  useEffect(() => {  //aqui usa o useEffect para a lista aparecer assim que carrega a página
-    loadLista()
-  }, [])
-
+ 
   async function deleteItem(id: number) { //essa a função responsável por deletar o item da lista
-    await api.delete(`/livros/${id}`)
-    loadLista()
+    try {
+      await api.delete(`/livros/${id}`)
+      const filteredItems = items.filter((item)=>{
+        item.id !== id
+      })
+      setItems(filteredItems)
+      loadLista()
+    } catch (error) {
+      console.log("erro")
+    }
+
+  }
+
+  async function editItem(id: number) {
+    try {
+      await api.put(`/livros/${id}`)
+      loadLista()
+    } catch (error) {
+      console.log("erro")
+    }
   }
 
   return (
@@ -64,6 +84,7 @@ export default function Home() {
         {items.map((item, index) => (
           <li key={index}>
             {item.titulo}
+            <button onClick={() => { editItem(item.id) }}>editar</button>
             <button onClick={() => { deleteItem(item.id) }}>deletar</button>
           </li>
 
