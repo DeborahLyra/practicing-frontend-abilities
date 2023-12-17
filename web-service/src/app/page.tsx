@@ -27,7 +27,7 @@ export default function Home() {
       console.log("erro")
     }
   }
-  
+
   useEffect(() => {  //aqui usa o useEffect para a lista aparecer assim que carrega a página
     loadLista()
   }, [])
@@ -46,29 +46,52 @@ export default function Home() {
     }
   }
 
- 
-  async function deleteItem(id: number) { //essa a função responsável por deletar o item da lista
+
+  async function HandleDeleteItem(id: number) { //essa a função responsável por deletar o item da lista
     try {
       await api.delete(`/livros/${id}`)
-      const filteredItems = items.filter((item)=>{
-        item.id !== id
-      })
+      const filteredItems = items.filter((item) => item.id !== id)
       setItems(filteredItems)
-      loadLista()
     } catch (error) {
       console.log("erro")
     }
 
   }
 
-  async function editItem(id: number) {
-    try {
-      await api.put(`/livros/${id}`)
-      loadLista()
-    } catch (error) {
-      console.log("erro")
-    }
+  async function handleEditItem(id: number) {
+    const changedItems = items.map((item) => {
+      if (item.id === id) {
+        return { ...item, isEditing: true };
+      }
+      return item;
+    });
+
+    setItems(changedItems);
   }
+
+  function handleUpdateItem(id: number) {
+
+    const changedItems = items.map((item) => {
+      if (item.id === id) {
+        return { ...item, isEditing: false };
+      }
+      return item;
+    });
+
+    setItems(changedItems);
+  }
+
+  function handleChangeItem(id: number, textValue: string) {
+    const changedItems = items.map((item) => {
+      if (item.id === id) {
+        return { ...item, nome: textValue };
+      }
+      return item;
+    });
+
+    setItems(changedItems);
+  }
+
 
   return (
     //logo abaixo é o input, nele chama a funcão setTextInput quando há mudanças nele, que armazena o valor escrito nele
@@ -76,18 +99,36 @@ export default function Home() {
     //depois vem a lisa, onde usa o map para adicionar diversos itens em cada li
     <>
       <h1>Lista de livros</h1>
-      <input onChange={(e) => setTextInput(e.target.value)} type="text" placeholder="digite um título aqui" /> <br /><br />
+      <div style={{ marginBottom: 10 }}>
+        <input
+          onChange={(e) => setTextInput(e.target.value)}
+          placeholder="Digite o seu texto aqui..."
+        />
+        <button onClick={addItemLista}>Enviar</button>
+      </div>
 
-      <button onClick={addItemLista}>clique para adicionar</button>
-      <span>{load && "carregando"}</span>
+      <span>{load && "Carregando..."}</span>
+
       <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-            {item.titulo}
-            <button onClick={() => { editItem(item.id) }}>editar</button>
-            <button onClick={() => { deleteItem(item.id) }}>deletar</button>
-          </li>
+        {items.map((item) => (
+          <li key={item.id}>
+            {item.isEditing ? (
+              <input
+                onChange={(e) => handleChangeItem(item.id, e.target.value)}
+                value={item.titulo}
+              />
+            ) : (
+              item.titulo
+            )}
 
+            {item.isEditing ? (
+              <button onClick={() => handleUpdateItem(item.id)}>Save</button>
+            ) : (
+              <button onClick={() => handleEditItem(item.id)}>Edit</button>
+            )}
+
+            <button onClick={() => HandleDeleteItem(item.id)}>Delete</button>
+          </li>
         ))}
       </ul>
 
